@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <div id="screen1" class="h-screen flex flex-col">
+        <div class="p-4 flex items-center bg-gray-800">
+            <input type="text" placeholder="Buscar las carpet..." class="flex-grow bg-gray-700 rounded-lg py-2 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="showScreen3Button" class="ml-4 p-2 rounded-full bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </button>
+            <button class="ml-2 p-2 rounded-full bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7m-4 0v10M8 7v10m8-4v4m-4-4v4m-4-4v4" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-1 flex-grow overflow-y-auto">
+            <div class="relative bg-gray-800 h-48 flex items-center justify-center">
+                <img src="https://via.placeholder.com/200x200/4B5563/FFFFFF?text=Screenshots" alt="Screenshots" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                <div class="relative z-10 text-center">
+                    <p class="text-lg font-bold">Screenshots</p>
+                    <p class="text-sm text-gray-400">2137</p>
+                </div>
+            </div>
+            <div class="relative bg-gray-800 h-48 flex items-center justify-center">
+                <img src="https://via.placeholder.com/200x200/4B5563/FFFFFF?text=Telegram_images" alt="Telegram Images" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                <div class="relative z-10 text-center">
+                    <p class="text-lg font-bold">Telegram images</p>
+                    <p class="text-sm text-gray-400">6</p>
+                </div>
+            </div>
+            <div class="relative bg-gray-800 h-48 flex items-center justify-center">
+                <img src="https://via.placeholder.com/200x200/4B5563/FFFFFF?text=Camera" alt="Camera" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                <div class="relative z-10 text-center">
+                    <p class="text-lg font-bold">Camera</p>
+                    <p class="text-sm text-gray-400">2</p>
+                </div>
+            </div>
+            <div class="relative bg-gray-800 h-48 flex items-center justify-center">
+                <img src="https://via.placeholder.com/200x200/4B5563/FFFFFF?text=CamScanner" alt="CamScanner" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                <div class="relative z-10 text-center">
+                    <p class="text-lg font-bold">CamScanner</p>
+                    <p class="text-sm text-gray-400">2</p>
+                </div>
+            </div>
+            <div class="relative bg-gray-800 h-48 flex items-center justify-center">
+                <img src="https://via.placeholder.com/200x200/4B5563/FFFFFF?text=Camera" alt="Camera" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                <div class="relative z-10 text-center">
+                    <p class="text-lg font-bold">Camera</p>
+                    <p class="text-sm text-gray-400">816</p>
+                </div>
+            </div>
+            </div>
+
+        <div class="p-4 flex justify-center">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                View hidden photos
+            </button>
+        </div>
+    </div>
+
+    <div id="screen3" class="h-screen flex flex-col hidden">
+        <div class="p-4 flex items-center bg-gray-800">
+            <button id="backButton" class="mr-4 p-2 rounded-full bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+            </button>
+            <input type="text" placeholder="Buscar los archiv..." class="flex-grow bg-gray-700 rounded-lg py-2 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button class="ml-4 p-2 rounded-full bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <button class="ml-2 p-2 rounded-full bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7m-4 0v10M8 7v10m8-4v4m-4-4v4m-4-4v4" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="flex-grow overflow-y-auto p-4">
+            <h2 class="text-lg font-bold mb-4">Hoy</h2>
+            <div class="mb-6">
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251119-171347_Gallery.jpg</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251119-151636_TikTok.jpg</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251119-135944_Facebook.jpg</span>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-bold mb-4">Ayer</h2>
+            <div class="mb-6">
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251118-105406_TikTok.jpg</span>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-bold mb-4">17 noviembre 2025</h2>
+            <div class="mb-6">
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251117-214419_eFotbal.jpg</span>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-bold mb-4">16 noviembre 2025</h2>
+            <div class="mb-6">
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251116-210721_TikTok.jpg</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251116-132519_eFotbal.jpg</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/60x60/4B5563/FFFFFF?text=Thumb" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <span>Screenshot_20251116-132517_eFotbal.jpg</span>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
